@@ -11,7 +11,8 @@ function App() {
   return (
     <div>
       <h2 style={{textAlign: 'center'}}>Let's get started</h2>
-      <Expenses item={expenses} />
+      {/* Yahan 'item' ko 'items' kar do */}
+      <Expenses items={expenses} /> 
     </div>
   );
 }
