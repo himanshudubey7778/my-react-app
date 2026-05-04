@@ -10,8 +10,7 @@ function App() {
 
   return (
     <div>
-      <h2 style={{textAlign: 'center'}}>Let's get started</h2>
-      {/* Yahan 'item' ko 'items' kar do */}
+      <h2 style={{textAlign: 'center', color: '#2c3e50'}}>My Expense Tracker</h2>
       <Expenses items={expenses} /> 
     </div>
   );
