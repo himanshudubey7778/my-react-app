@@ -1,9 +1,18 @@
-.expenses {
-    padding: 1rem;
-    background-color: rgb(31, 31, 31);
-    margin: 2rem auto;
-    width: 50rem;
-    max-width: 95%;
-    border-radius: 12px; /* Thoda premium look ke liye */
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25); /* Dabdaba depth ke liye */
+.expenses-filter {
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+.expenses-filter__control {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expenses-filter select {
+  font: inherit;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  border-radius: 6px;
 }
