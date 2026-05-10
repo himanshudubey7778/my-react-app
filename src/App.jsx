@@ -1,22 +1,37 @@
-import React from 'react';
-import Expenses from './components/Expenses'; // Ye line import ke liye hai
-import './App.css';
+import React, { useState } from 'react';
+import Login from './components/Login';
+import Expenses from './components/Expenses';
 
 function App() {
-  // Ye wahi data hai jo humne pehle discuss kiya tha
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const loginHandler = (email, password) => {
+    // Real project mein yahan API call hoti hai
+    // Abhi ke liye hum seedha login kar rahe hain
+    setIsLoggedIn(true);
+  };
+
+  const logoutHandler = () => {
+    setIsLoggedIn(false);
+  };
+
   const expenses = [
     { id: 'e1', title: 'School fee', amount: 200, date: new Date(2026, 4, 25) },
-    { id: 'e2', title: 'House Rent', amount: 2000, date: new Date(2026, 4, 25) },
-    { id: 'e3', title: 'Food expense', amount: 1000, date: new Date(2026, 4, 25) },
-    { id: 'e4', title: 'Car Insurance', amount: 5000, date: new Date(2026, 4, 25) }
   ];
 
   return (
-    <div>
-      <h2 style={{textAlign: 'center', color: '#2c3e50'}}>My Expense Tracker</h2>
-      {/* Yahan hum 'Expenses' component ko data (items) bhej rahe hain */}
-      <Expenses items={expenses} /> 
-    </div>
+    <React.Fragment>
+      <h2 style={{textAlign: 'center'}}>Sultanpur Tech Portal</h2>
+      
+      {!isLoggedIn && <Login onLogin={loginHandler} />}
+      
+      {isLoggedIn && (
+        <>
+          <Expenses items={expenses} />
+          <button onClick={logoutHandler} style={{margin: '20px auto', display: 'block'}}>Logout</button>
+        </>
+      )}
+    </React.Fragment>
   );
 }
 
